@@ -8,7 +8,7 @@ describe "static_pages" do
     # 1. visit the home page
     before { visit home_path }
     # test - it should have a page one tag of welcome
-    it { should have_selector('h1', "welcome") }  
+    it { should have_selector('h1', "Welcome") }  
     # test - it should have a title of todo | home
     it { should have_title("Todo | Home") }
   end
