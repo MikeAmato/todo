@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe Task do 
-  before { @task = Task.new(title: "Walk the dog", completed: true) }
+  before { @task = Task.new(title: "Walk the dog", description: "Walk dog", completed: true) }
 
   subject { @task }
 
+  it { should respond_to(:description) }
   it { should respond_to(:completed) }
   it { should respond_to(:title) }
   it { should be_valid }
@@ -23,13 +24,13 @@ describe Task do
 
       describe "too long" do 
         before { @task.title = "a" * 255 }
-        it { should_not be_valid}
+        it { should_not be_valid }
       end 
 
       describe "completed" do 
         it "false by default" do
           @task = Task.new(title: "Walk the dog")
-          expect(@task.completed).to be_falsey
+          expect(@task.completed).to eq(false)
         end
       end 
 
@@ -49,5 +50,22 @@ describe Task do
       #   end      
       # end
     end 
+
+    describe "description" do 
+      describe "not present" do
+        before { @task.description = " " }
+        it  { should_not be_valid }
+      end
+
+      describe "too short" do
+        before { @task.description = "a" * 2 }
+        it { should_not be_valid }
+      end
+
+      describe "too long" do
+        before { @task.description = "a" * 255 }
+        it { should_not be_valid }
+      end
+    end
   end 
 end 
