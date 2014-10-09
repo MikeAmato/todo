@@ -1,8 +1,13 @@
 Todo::Application.routes.draw do
 
+  #used more for static pages
   match '/home', to: 'static_pages#home', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/help', to: 'static_pages#help', via: 'get'
+
+  #used more for dynamic pages
+  get '/task/:id', to: 'task#show', as: :show_task
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
