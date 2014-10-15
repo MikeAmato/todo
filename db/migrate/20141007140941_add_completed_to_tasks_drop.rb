@@ -1,5 +1,5 @@
-class AddCompletedToTasksDrop < ActiveRecord::Migration
+class AddCompletedToTaskDrop < ActiveRecord::Migration
   def change
-    add_column :tasks, :completed, :boolean, default: false
+    add_column :task, :completed, :boolean, default: false
   end
 end

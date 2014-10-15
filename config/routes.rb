@@ -1,8 +1,13 @@
 Todo::Application.routes.draw do
 
+  #used more for static pages
   match '/home', to: 'static_pages#home', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/help', to: 'static_pages#help', via: 'get'
+
+  #we were about to do something like: post to '/tasks' to: 'tasks#create'
+
+  resources :task, only: [:show, :new, :create, :index, :edit]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
