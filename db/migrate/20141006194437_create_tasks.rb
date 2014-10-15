@@ -1,6 +1,6 @@
-class CreateTasks < ActiveRecord::Migration
+class CreateTask < ActiveRecord::Migration
   def change
-    create_table :tasks do |t|
+    create_table :task do |t|
       t.string :title
 
       t.timestamps

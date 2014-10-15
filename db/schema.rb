@@ -5,13 +5,13 @@
 #
 # Note that this schema.rb definition is the authoritative source for your
 # database schema. If you need to create the application database on another
-# system, you should be using db:schemtoa:load, not running all the migrations
+# system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141007160607) do
+ActiveRecord::Schema.define(:version => 20141015190243) do
 
   create_table "tasks", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20141007160607) do
     t.datetime "updated_at",                     :null => false
     t.boolean  "completed",   :default => false
     t.string   "description"
+    t.date     "due_at"
   end
 
 end

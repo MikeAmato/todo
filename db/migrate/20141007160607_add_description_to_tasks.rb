@@ -1,5 +1,5 @@
-class AddDescriptionToTasks < ActiveRecord::Migration
+class AddDescriptionToTask < ActiveRecord::Migration
   def change
-    add_column :tasks, :description, :string
+    add_column :task, :description, :string
   end
 end
